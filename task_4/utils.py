@@ -8,7 +8,11 @@ def currency_rates(name):
     date = content_url[content_url.index('Date="'):content_url.index('" name')].replace('Date="', '')
     date = datetime.strptime(date, '%d.%m.%Y').date()
     name = name.upper()
-    if name == "USD" or name == "EUR" or name == "GBP" or name == "JPY" or name == "CNY":
+    if name == "USD" or name == "EUR" or name == "GBP" or name == "JPY" or name == "CNY" or name == "AUD"\
+            or name == "AZN" or name == "AMD" or name == "BYN" or name == "BGN" or name == "BRL" or name == "HUF" or name == "HKD"\
+            or name == "DKK" or name == "INR" or name == "KZT" or name == "CAD" or name == "KGS" or name == "CNY" or name == "MDL"\
+            or name == "NOK" or name == "PLN" or name == "RON" or name == "SGD" or name == "TJS" or name == "TRY" or name == "TMT"\
+            or name == "UZS" or name == "UAH" or name == "CZK" or name == "SEK" or name == "CHF" or name == "ZAR" or name == "KRW":
         name_from_url = content_url[content_url.index(name):]
         name_from_url = name_from_url[name_from_url.find('<Value>'):name_from_url.index('</Value>'):]
         value = round(float(name_from_url.replace('<Value>', '').replace(',', ".")), 2)
